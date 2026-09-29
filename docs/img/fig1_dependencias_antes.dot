@@ -1,0 +1,11 @@
+digraph G {
+ graph [rankdir=TB, nodesep=0.7, ranksep=0.8, fontname="Liberation Sans", pad=0.2];
+ node [fontname="Liberation Sans"]; edge [fontname="Liberation Sans", fontsize=10];
+ A [label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="5" BGCOLOR="#FDECEA" COLOR="#B71C1C"><TR><TD ALIGN="CENTER"><B>LogisticaServiceAjustado</B></TD></TR><TR><TD ALIGN="LEFT"><FONT POINT-SIZE="10">- proveedorLocal : ServicioEnvio<BR ALIGN="LEFT"/>- rapidExpress : RapidExpressAPI<BR ALIGN="LEFT"/></FONT></TD></TR><TR><TD ALIGN="LEFT"><FONT POINT-SIZE="10">+ cotizar(proveedor : String, origen : String,<BR ALIGN="LEFT"/>    destino : String, pesoKg : double) : double<BR ALIGN="LEFT"/></FONT></TD></TR></TABLE>>, shape=plaintext];
+ S [label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="5" BGCOLOR="#EEF3F8" COLOR="#333333"><TR><TD ALIGN="CENTER"><FONT POINT-SIZE="10">«interface»</FONT></TD></TR><TR><TD ALIGN="CENTER"><B><I>ServicioEnvio</I></B></TD></TR><TR><TD ALIGN="LEFT"><FONT POINT-SIZE="10"> </FONT></TD></TR><TR><TD ALIGN="LEFT"><FONT POINT-SIZE="10">+ calcularCosto(origen, destino, peso : double) : double<BR ALIGN="LEFT"/></FONT></TD></TR></TABLE>>, shape=plaintext];
+ R [label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="5" BGCOLOR="#F5F5F5" COLOR="#333333"><TR><TD ALIGN="CENTER"><FONT POINT-SIZE="10">«librería externa (no modificable)»</FONT></TD></TR><TR><TD ALIGN="CENTER"><B>RapidExpressAPI</B></TD></TR><TR><TD ALIGN="LEFT"><FONT POINT-SIZE="10"> </FONT></TD></TR><TR><TD ALIGN="LEFT"><FONT POINT-SIZE="10">+ getShippingPrice(route : String,<BR ALIGN="LEFT"/>    weightInGrams : int) : double<BR ALIGN="LEFT"/></FONT></TD></TR></TABLE>>, shape=plaintext];
+ A -> S [arrowhead=vee, label="  usa (abstracción)"];
+ A -> R [arrowhead=vee, color="#B71C1C", fontcolor="#B71C1C", penwidth=2, label="  depende de clase concreta\l  (unidades y formato propios)\l"];
+ N [shape=note, style=filled, fillcolor="#FFF8E1", color="#8D6E00", fontsize=10, label="Cambio futuro: 3 operadores más\l→ 3 campos nuevos + 3 bloques if\l   + 3 conversiones dentro de cotizar()\l"];
+ A -> N [style=dotted, arrowhead=none, color="#8D6E00"];
+}

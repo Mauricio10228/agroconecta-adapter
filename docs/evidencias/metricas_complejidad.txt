@@ -1,0 +1,10 @@
+Complejidad ciclomática (lizard 1.24.0) - método cotizar()
+--- Línea base (commit 1b17548), 2 proveedores:
+      24      3     87      4      32 LogisticaServiceAjustado::cotizar@7-38@/tmp/m_base/src/main/java/Integracion_con_proveedores/LogisticaServiceAjustado.java
+      10      1     25      3      11 LogisticaService::cotizar@12-22@/tmp/m_base/src/main/java/Integracion_con_proveedores/LogisticaService.java
+--- Experimento SIN patrón (rama experimento/tercer-proveedor-sin-patron), 3 proveedores:
+      32      4    117      4      43 LogisticaServiceAjustado::cotizar@8-50@/tmp/m_exp/src/main/java/Integracion_con_proveedores/LogisticaServiceAjustado.java
+      10      1     25      3      11 LogisticaService::cotizar@12-22@/tmp/m_exp/src/main/java/Integracion_con_proveedores/LogisticaService.java
+--- Final (HEAD), 3 proveedores:
+       7      2     55      4       7 LogisticaService::cotizar@27-33@/tmp/m_final/src/main/java/Integracion_con_proveedores/LogisticaService.java
+

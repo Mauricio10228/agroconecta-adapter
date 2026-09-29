@@ -1,0 +1,16 @@
+digraph G {
+ graph [rankdir=LR, nodesep=0.3, ranksep=0.75, fontname="Liberation Sans", pad=0.2, compound=true, newrank=true];
+ node [fontname="Liberation Sans", shape=box, style="rounded,filled", fillcolor="#FFFFFF", fontsize=11]; edge [fontname="Liberation Sans", fontsize=9];
+ subgraph cluster_in { label="Capa de aplicación\n(ilustrativa)"; style="rounded,filled"; fillcolor="#F3E5F5"; color="#6A1B9A"; fontsize=11;
+   UC [label="Servicio de pedidos\n(caso de uso:\ncotizar envío)"]; }
+ subgraph cluster_core { label="Núcleo: lógica de logística"; style="rounded,filled"; fillcolor="#E8F5E9"; color="#1B5E20"; fontsize=11;
+   LS [label="LogisticaService\n(Client)"]; P [label="«puerto de salida»\nServicioEnvio\n(Target)", fillcolor="#E3F2FD", color="#0D47A1"]; }
+ subgraph cluster_ad { label="Adaptadores de infraestructura\n(patrón Adapter)"; style="rounded,filled"; fillcolor="#FFF3E0"; color="#E65100"; fontsize=11;
+   AL [label="Proveedor local\n(ya conforme)"]; AR [label="RapidExpressAdapter"]; AA [label="AndinaCargoAdapter"]; AN [label="Adapter N…\n(futuros operadores)", style="rounded,dashed,filled"]; }
+ subgraph cluster_ext { label="Sistemas externos\n(no modificables)"; style="rounded,filled"; fillcolor="#F5F5F5"; color="#555555"; fontsize=11;
+   EL [label="API proveedor local"]; ER [label="RapidExpressAPI"]; EA [label="AndinaCargoAPI"]; EN [label="API operador N", style="rounded,dashed,filled"]; }
+ UC -> LS [label=" invoca"];
+ LS -> P [label=" depende de la\l abstracción\l"];
+ P -> AL [dir=back, arrowtail=empty, style=dashed]; P -> AR [dir=back, arrowtail=empty, style=dashed]; P -> AA [dir=back, arrowtail=empty, style=dashed]; P -> AN [dir=back, arrowtail=empty, style=dashed];
+ AL -> EL; AR -> ER; AA -> EA; AN -> EN [style=dashed];
+}
