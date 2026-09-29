@@ -11,6 +11,7 @@ public final class ConfiguracionLogistica {
 
     public static final String LOCAL = "LOCAL";
     public static final String RAPID = "RAPID";
+    public static final String ANDINA = "ANDINA";
 
     private ConfiguracionLogistica() {
     }
@@ -22,6 +23,7 @@ public final class ConfiguracionLogistica {
         Map<String, ServicioEnvio> proveedores = new LinkedHashMap<>();
         proveedores.put(LOCAL, proveedorLocal);
         proveedores.put(RAPID, new RapidExpressAdapter(new RapidExpressAPI()));
+        proveedores.put(ANDINA, new AndinaCargoAdapter(new AndinaCargoAPI()));
         return new LogisticaService(proveedores);
     }
 }

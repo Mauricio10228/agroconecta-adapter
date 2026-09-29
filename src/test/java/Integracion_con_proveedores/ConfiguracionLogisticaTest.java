@@ -21,4 +21,10 @@ class ConfiguracionLogisticaTest {
         assertEquals(5.0,
                 servicio.cotizar(ConfiguracionLogistica.RAPID, "A", "B", 2.0), 1e-9);
     }
+
+    @Test
+    void andina_seCotizaConElTercerOperadorSinTocarLogisticaService() {
+        assertEquals(21.63696,
+                servicio.cotizar(ConfiguracionLogistica.ANDINA, "A", "B", 10.0), 1e-9);
+    }
 }
