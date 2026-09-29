@@ -67,12 +67,12 @@ class CotizacionLogisticaTest {
         assertEquals(0, local.invocaciones);
     }
 
-    /** Defecto latente detectado en el diagnóstico: (int) trunca; 2.01 kg * 1000 = 2009.99... */
+    /** Corrección del defecto latente del diagnóstico: 2.01 kg * 1000 = 2009.99..., se redondea a 2010 g. */
     @Test
-    void rapid_truncaLosGramosEnLugarDeRedondear() {
+    void rapid_redondeaLosGramosAlMasCercano() {
         crearServicio().cotizar("RAPID", "A", "B", 2.01);
 
-        assertEquals(2009, rapid.gramosRecibidos);
+        assertEquals(2010, rapid.gramosRecibidos);
     }
 
     @Test

@@ -9,7 +9,7 @@ import java.util.Objects;
  * y traduce cada llamada a la interfaz incompatible del <b>Adaptee</b> ({@link RapidExpressAPI}):
  * <ul>
  *   <li>origen + destino  -&gt; ruta con formato "origen-destino"</li>
- *   <li>peso en kg (double) -&gt; peso en gramos (int)</li>
+ *   <li>peso en kg (double) -&gt; peso en gramos (int, redondeado al gramo más cercano)</li>
  * </ul>
  * Así, ningún otro componente conoce los detalles de la API de RapidExpress.
  */
@@ -27,7 +27,7 @@ public class RapidExpressAdapter implements ServicioEnvio {
     @Override
     public double calcularCosto(String origen, String destino, double peso) {
         String ruta = origen + SEPARADOR_RUTA + destino;
-        int gramos = (int) (peso * GRAMOS_POR_KG);
+        int gramos = (int) Math.round(peso * GRAMOS_POR_KG);
         return api.getShippingPrice(ruta, gramos);
     }
 }
