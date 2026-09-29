@@ -3,7 +3,7 @@ package Integracion_con_proveedores;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
-import java.lang.reflect.Field;
+import java.util.Map;
 import org.junit.jupiter.api.Test;
 
 /**
@@ -19,21 +19,10 @@ class CotizacionLogisticaTest {
 
     // ---- ÚNICO punto que cambia entre la línea base y la versión refactorizada ----
     private Cotizador crearServicio() {
-        try {
-            LogisticaServiceAjustado servicio = new LogisticaServiceAjustado();
-            inyectar(servicio, "proveedorLocal", local);
-            inyectar(servicio, "rapidExpress", rapid);
-            return servicio::cotizar;
-        } catch (ReflectiveOperationException e) {
-            throw new IllegalStateException(e);
-        }
-    }
-
-    private static void inyectar(Object destino, String campo, Object valor)
-            throws ReflectiveOperationException {
-        Field f = destino.getClass().getDeclaredField(campo);
-        f.setAccessible(true);
-        f.set(destino, valor);
+        LogisticaService servicio = new LogisticaService(Map.of(
+                "LOCAL", local,
+                "RAPID", new RapidExpressAdapter(rapid)));
+        return servicio::cotizar;
     }
     // -------------------------------------------------------------------------------
 
