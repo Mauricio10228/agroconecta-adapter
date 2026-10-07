@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>co.profundizacion</groupId>
+  <artifactId>profundizacion-3-arquitectura</artifactId>
+  <version>1.0.0</version>
+  <packaging>pom</packaging>
+  <name>Profundización 3 - Patrones GoF como soporte al diseño interno de componentes</name>
+
+  <!-- Agregador: "mvn test" en la raíz ejecuta las pruebas de los tres casos. -->
+  <modules>
+    <module>Caso_1_mercadoregional-factory-method</module>
+    <module>Caso_2_agroconecta-adapter</module>
+    <module>Caso_3_turismo-strategy</module>
+  </modules>
+</project>
