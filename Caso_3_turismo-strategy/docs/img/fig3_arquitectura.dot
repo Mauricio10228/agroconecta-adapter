@@ -1,0 +1,16 @@
+digraph G {
+ graph [rankdir=TB, nodesep=0.25, ranksep=0.5, fontname="Liberation Sans", pad=0.15, newrank=true];
+ node [fontname="Liberation Sans", shape=box, style="rounded,filled", fillcolor="#FFFFFF", fontsize=12]; edge [fontname="Liberation Sans", fontsize=10];
+ subgraph cluster_app { label="Capa de aplicación"; style="rounded,filled"; fillcolor="#F3E5F5"; color="#6A1B9A"; fontsize=12;
+   PC [label="ProcesadorCompra\n(proceso principal de compra)"]; }
+ subgraph cluster_dom { label="Dominio: reglas de descuento"; style="rounded,filled"; fillcolor="#E8F5E9"; color="#1B5E20"; fontsize=12;
+   CA [label="CalculadorDescuento\n(Context)"]; PD [label="PoliticaDescuento\n(Strategy)", fillcolor="#E3F2FD", color="#0D47A1"];
+   P1 [label="Descuento-\nPorcentual", style="rounded,filled", fillcolor="#FFF3E0", color="#E65100"]; P2 [label="Descuento-\nAniversario", fillcolor="#FFF3E0", color="#E65100"]; PN [label="Políticas N\n(municipio, cajas…)", style="rounded,dashed,filled", fillcolor="#FFF3E0", color="#E65100"]; }
+ subgraph cluster_cfg { label="Composición y configuración (punto de cambio de Mercadeo)"; style="rounded,filled"; fillcolor="#F5F5F5"; color="#555555"; fontsize=12;
+   CF [label="ConfiguracionDescuentos\n+ CatalogoPoliticas"]; }
+ PC -> CA [label=" invoca"];
+ CA -> PD [label=" depende de la abstracción"];
+ PD -> P1 [dir=back, arrowtail=empty, style=dashed]; PD -> P2 [dir=back, arrowtail=empty, style=dashed]; PD -> PN [dir=back, arrowtail=empty, style=dashed];
+ CF -> P1 [style=dotted, label=" registra"]; CF -> P2 [style=dotted]; CF -> PN [style=dotted];
+ {rank=same; P1; P2; PN}
+}

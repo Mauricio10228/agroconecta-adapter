@@ -1,0 +1,69 @@
+?
+?? JUnit Platform Suite ?
+?? JUnit Jupiter ?
+?  ?? DescuentoPorcentualTest ?
+?  ?  ?? rechazaPorcentajeFueraDeRango() ?
+?  ?  ?? exponeSuCodigo() ?
+?  ?  ?? aceptaLosLimitesDelPorcentaje() ?
+?  ?  ?? cumpleElContratoPoliticaDescuento() ?
+?  ?  ?? aplicaElPorcentajeSobreElValor() ?
+?  ?  ?? rechazaCodigoNuloOVacio() ?
+?  ?? CalculadorDescuentoPoliticasTest ?
+?  ?  ?? retirarUnaPolitica_laDejaSinEfecto() ?
+?  ?  ?? usaCualquierPoliticaRegistrada_sinConocerSuImplementacion() ?
+?  ?  ?? rechazaCatalogoNulo() ?
+?  ?  ?? reemplazarUnaPolitica_cambiaElResultadoSinTocarElCalculador() ?
+?  ?? DescuentoAniversarioTest ?
+?  ?  ?? estaDisponibleEnElCatalogoSinTocarElCalculador() ?
+?  ?  ?? fueraDeLaVigencia_noOtorgaDescuento() ?
+?  ?  ?? exponeSuCodigo() ?
+?  ?  ?? validaSusParametros() ?
+?  ?  ?? laVigenciaIncluyeSusDosExtremos() ?
+?  ?  ?? dentroDeLaVigencia_aplicaElPorcentaje() ?
+?  ?  ?? rechazaPorcentajeNegativoONoNumerico() ?
+?  ?? ProcesadorCompraTest ?
+?  ?  ?? rechazaCalculadorNulo() ?
+?  ?  ?? procesoNoCambia_cuandoSeReemplazaUnaPolitica() ?
+?  ?  ?? procesar_sinPoliticaAplicable_cobraElValorCompleto() ?
+?  ?  ?? procesar_calculaDescuentoYTotal() ?
+?  ?? CalculadorDescuentoTest ?
+?  ?  ?? frecuente_aplicaDiezPorCiento() ?
+?  ?  ?? tipoDesconocido_devuelveCeroSinFallar() ?
+?  ?  ?? convenio_aplicaVeintePorCiento() ?
+?  ?  ?? temporadaBaja_aplicaQuincePorCiento() ?
+?  ?  ?? tipoVacio_devuelveCero() ?
+?  ?  ?? descuentoEsProporcionalAlValorDeLaCompra() ?
+?  ?  ?? valorCero_generaDescuentoCero() ?
+?  ?  ?? tipo_distingueMayusculasDeMinusculas() ?
+?  ?  ?? tipoConEspacios_noSeNormaliza() ?
+?  ?? CalculadorDescuentoDefectosTest ?
+?  ?  ?? tipoNulo_lanzaIllegalArgumentExceptionConMensaje() ?
+?  ?  ?? valorNegativo_lanzaIllegalArgumentException() ?
+?  ?  ?? valorNoNumerico_lanzaIllegalArgumentException() ?
+?  ?? CatalogoPoliticasTest ?
+?     ?? registrarYBuscar() ?
+?     ?? codigos_devuelveCopiaInmutable() ?
+?     ?? retirar_indicaSiExistia() ?
+?     ?? buscarInexistente_devuelveVacio() ?
+?     ?? registrarConMismoCodigo_reemplaza() ?
+?     ?? rechazaPoliticaNula() ?
+?? JUnit Vintage ?
+
+Test run finished after 256 ms
+[        10 containers found      ]
+[         0 containers skipped    ]
+[        10 containers started    ]
+[         0 containers aborted    ]
+[        10 containers successful ]
+[         0 containers failed     ]
+[        39 tests found           ]
+[         0 tests skipped         ]
+[        39 tests started         ]
+[         0 tests aborted         ]
+[        39 tests successful      ]
+[         0 tests failed          ]
+
+
+WARNING: Delegated to the 'execute' command.
+         This behaviour has been deprecated and will be removed in a future release.
+         Please use the 'execute' command directly.

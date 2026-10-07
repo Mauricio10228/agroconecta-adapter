@@ -1,0 +1,9 @@
+digraph G {
+ graph [rankdir=TB, nodesep=0.5, ranksep=0.65, fontname="Liberation Sans", pad=0.15];
+ node [fontname="Liberation Sans"]; edge [fontname="Liberation Sans", fontsize=10];
+ P [label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="5" BGCOLOR="#F5F5F5" COLOR="#333333"><TR><TD ALIGN="CENTER"><FONT POINT-SIZE="10">«cliente (no entregado en el caso)»</FONT></TD></TR><TR><TD ALIGN="CENTER"><B>Proceso de compra</B></TD></TR><TR><TD ALIGN="LEFT"><FONT POINT-SIZE="10"> </FONT></TD></TR><TR><TD ALIGN="LEFT"><FONT POINT-SIZE="10">+ comprar(...)<BR ALIGN="LEFT"/></FONT></TD></TR></TABLE>>, shape=plaintext];
+ A [label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="5" BGCOLOR="#FDECEA" COLOR="#B71C1C"><TR><TD ALIGN="CENTER"><B>CalculadorDescuento</B></TD></TR><TR><TD ALIGN="LEFT"><FONT POINT-SIZE="10">(sin atributos)<BR ALIGN="LEFT"/></FONT></TD></TR><TR><TD ALIGN="LEFT"><FONT POINT-SIZE="10">+ calcular(tipo : String,<BR ALIGN="LEFT"/>    valorCompra : double) : double<BR ALIGN="LEFT"/>  if tipo == &quot;FRECUENTE&quot;       -&gt; 0.10<BR ALIGN="LEFT"/>  else if &quot;TEMPORADA_BAJA&quot;    -&gt; 0.15<BR ALIGN="LEFT"/>  else if &quot;CONVENIO&quot;          -&gt; 0.20<BR ALIGN="LEFT"/>  otherwise                    -&gt; 0<BR ALIGN="LEFT"/></FONT></TD></TR></TABLE>>, shape=plaintext];
+ P -> A [arrowhead=vee, label="  usa"];
+ N [shape=note, style=filled, fillcolor="#FFF8E1", color="#8D6E00", fontsize=10, label="Mercadeo anuncia 5 tipos nuevos de política\l→ 5 ramas más dentro de calcular()\l   (aniversario, regional, municipio,\l    temporales, cajas de compensación)\l"];
+ A -> N [style=dotted, arrowhead=none, color="#8D6E00"];
+}
